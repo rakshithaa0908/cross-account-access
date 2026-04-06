@@ -30,34 +30,59 @@ Determines what actions an authenticated user or service is allowed to perform o
 
 Cross-account access allows users or services from one account to securely access resources in another by assuming a role.
 
+### Technologies Used
+- AWS IAM (Identity and Access Management)
+- AWS S3
+- IAM Roles and Policies
+- Cross-Account Role Assumption
+- AWS Management Console
+---
+
+## Prerequisites
+- Two AWS accounts (Account A and Account B)
+- IAM user with appropriate permissions in Account A
+- Basic knowledge of AWS IAM and S3
 ---
 
 ## Deployment Steps
 
 See full deployment instructions [here](docs/deployment-steps.md).
 
+---
 
 ## Project Structure
 ```
 cross-account-access/
 │
 ├── docs/
-│ ├── deployment-steps.md 
-│ └── screenshots/
-│ 	├── cross_account_access.png # Screenshot of cross-account access
-│ 	└── cross_account_architecture.png # Architecture diagram
-├── README.md 
-└── LICENSE 
+│   ├── deployment-steps.md
+│   └── screenshots/
+│       ├── cross_account_access.png
+│       └── cross_account_architecture.png
+├── README.md
+└── LICENSE
 ```
 ## Architecture Diagram
-
-**Cross Account Access Architecture**  
-![Cross Account Architecture](docs/screenshots/cross_account_architecture.png)
+![Architecture](docs/screenshots/cross_account_architecture.png)
 
 ## Screenshots
 
-**Cross Account Access Using IAM Role**  
+**Cross Account Access**
 ![Cross Account Access](docs/screenshots/cross_account_access.png)
+
+---
+## About This Project
+Built to demonstrate secure cross-account access in AWS using IAM roles. Instead of sharing long-term credentials, Account A users assume a role in Account B to temporarily access S3 resources — following AWS security best practices.
+
+---
+
+## Limitations
+- Temporary credentials expire after a set duration (1 hour on Free Tier)
+- Requires trust policy and permission policy to be configured correctly in both accounts
+- Does not cover cross-account access via S3 bucket policies
+- Intended for learning and demonstration purposes only
+
+---
 
 ## License
 
